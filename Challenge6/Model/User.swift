@@ -12,6 +12,7 @@ struct User: Identifiable, Codable, Equatable, Hashable {
     var id = UUID()
     var name: String
     var pictureName: String
+    var location: Location?
     var image: UIImage? {
         do {
             return try ImageService.readImageFromDisk(imageName: pictureName)

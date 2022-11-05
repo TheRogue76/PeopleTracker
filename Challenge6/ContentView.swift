@@ -25,6 +25,7 @@ struct ContentView: View {
                                 Image(uiImage: image)
                                     .resizable()
                                     .frame(width: 40, height: 40)
+                                    .cornerRadius(8)
                             }
                         }
                     }
@@ -46,8 +47,10 @@ struct ContentView: View {
                     viewModel.updateOrAddUser(user: user)
                 }
             })
+            .onAppear {
+                viewModel.startLocationService()
+            }
         }
-        
     }
 }
 

@@ -12,15 +12,27 @@ extension ContentView {
     
     @MainActor class ViewModel: ObservableObject {
         @Published var isShowingPicker = false
+        
         @Published var users: [User]
+        
         @Published var path = NavigationPath()
+        
+        private let locationService = LocationService()
+        
         @Published var inputImage: UIImage? {
             didSet {
                 if let inputImage {
                     do {
-                        let imageName = "\(UUID().uuidString).jpg"
+                        let id = UUID()
+                        let imageName = "\(id.uuidString).jpg"
                         try ImageService.writeImageToDisk(image: inputImage, imageName: imageName)
-                        showDetailScreen(user: User(name: "", pictureName: imageName))
+                        let currentLocation: Location?
+                        if let location = locationService.lastKnownLocation {
+                            currentLocation = Location(id: id, location: location)
+                        } else {
+                            currentLocation = nil
+                        }
+                        showDetailScreen(user: User(name: "", pictureName: imageName, location: currentLocation))
                     } catch {
                         print(error.localizedDescription)
                     }
@@ -63,6 +75,10 @@ extension ContentView {
                 users.append(user)
             }
             save()
+        }
+        
+        func startLocationService() -> Void {
+            locationService.start()
         }
     }
 }

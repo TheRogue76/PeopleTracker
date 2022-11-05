@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct EditItem: View {
     @Environment(\.dismiss) var dismiss
@@ -18,16 +19,39 @@ struct EditItem: View {
     }
     
     var body: some View {
-        VStack {
-            if let image = viewModel.user.image {
-                Image(uiImage: image)
-                    .resizable()
+        ScrollView {
+            VStack {
+                if let image = viewModel.user.image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .frame(height: 300)
+                        .cornerRadius(12)
+                }
+                
+                Toggle("Show image location", isOn: $viewModel.showMap.animation())
+                
+                if viewModel.showMap {
+                    Map(coordinateRegion: $viewModel.mapRegion, annotationItems: viewModel.locations) { location in
+                        MapAnnotation(coordinate: location.coordinate) {
+                            Image(systemName: "star.circle")
+                                .resizable()
+                                .foregroundColor(.red)
+                                .frame(width: 44, height: 44)
+                                .background(.white)
+                                .clipShape(Circle())
+                        }
+                    }
                     .frame(height: 300)
+                    .cornerRadius(12)
+                }
+                
+                TextField("Enter the name for this person", text: $viewModel.name)
+                Spacer()
             }
-            TextField("Enter the name for this person", text: $viewModel.name)
-                .padding(.leading)
-            Spacer()
+            .padding()
         }
+        .navigationTitle(viewModel.user.name)
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             Button("Save") {
                 onSave(viewModel.updateUserBasedOnFields())

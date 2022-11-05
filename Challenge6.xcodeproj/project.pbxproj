@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE9220B82916E08D000BB3A9 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9220B72916E08D000BB3A9 /* Location.swift */; };
+		CE9220BC2916E210000BB3A9 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9220BB2916E210000BB3A9 /* LocationService.swift */; };
 		CEFA6E3E29153A930032876F /* Challenge6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA6E3D29153A930032876F /* Challenge6App.swift */; };
 		CEFA6E4029153A930032876F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA6E3F29153A930032876F /* ContentView.swift */; };
 		CEFA6E4229153A960032876F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFA6E4129153A960032876F /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE9220B72916E08D000BB3A9 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		CE9220BB2916E210000BB3A9 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		CEFA6E3A29153A930032876F /* Challenge6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFA6E3D29153A930032876F /* Challenge6App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge6App.swift; sourceTree = "<group>"; };
 		CEFA6E3F29153A930032876F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +50,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE9220B92916E1CE000BB3A9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA6E562915D5770032876F /* ImageService.swift */,
+				CE9220BB2916E210000BB3A9 /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE9220BA2916E1DA000BB3A9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA6E542915D44F0032876F /* Filemanager+DocumentsDirectory.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CEFA6E3129153A930032876F = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +86,8 @@
 		CEFA6E3C29153A930032876F /* Challenge6 */ = {
 			isa = PBXGroup;
 			children = (
+				CE9220BA2916E1DA000BB3A9 /* Extensions */,
+				CE9220B92916E1CE000BB3A9 /* Services */,
 				CEFA6E512915D34B0032876F /* Model */,
 				CEFA6E4E2915D1710032876F /* ViewModel */,
 				CEFA6E4B29153AEA0032876F /* View */,
@@ -72,8 +95,6 @@
 				CEFA6E3F29153A930032876F /* ContentView.swift */,
 				CEFA6E4129153A960032876F /* Assets.xcassets */,
 				CEFA6E4329153A960032876F /* Preview Content */,
-				CEFA6E542915D44F0032876F /* Filemanager+DocumentsDirectory.swift */,
-				CEFA6E562915D5770032876F /* ImageService.swift */,
 			);
 			path = Challenge6;
 			sourceTree = "<group>";
@@ -108,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				CEFA6E522915D35C0032876F /* User.swift */,
+				CE9220B72916E08D000BB3A9 /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,9 +206,11 @@
 			files = (
 				CEFA6E4D29153AFD0032876F /* ImagePicker.swift in Sources */,
 				CEFA6E4029153A930032876F /* ContentView.swift in Sources */,
+				CE9220B82916E08D000BB3A9 /* Location.swift in Sources */,
 				CEFA6E3E29153A930032876F /* Challenge6App.swift in Sources */,
 				CEFA6E5B2915E40E0032876F /* EditItem+ViewModel.swift in Sources */,
 				CEFA6E572915D5770032876F /* ImageService.swift in Sources */,
+				CE9220BC2916E210000BB3A9 /* LocationService.swift in Sources */,
 				CEFA6E532915D35C0032876F /* User.swift in Sources */,
 				CEFA6E552915D44F0032876F /* Filemanager+DocumentsDirectory.swift in Sources */,
 				CEFA6E592915DB480032876F /* EditItem.swift in Sources */,
@@ -322,6 +346,7 @@
 				DEVELOPMENT_TEAM = 2Y9TDP52WY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location for attaching location to pictures";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -351,6 +376,7 @@
 				DEVELOPMENT_TEAM = 2Y9TDP52WY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location for attaching location to pictures";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
