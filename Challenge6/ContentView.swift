@@ -19,11 +19,11 @@ struct ContentView: View {
                     } label: {
                         HStack {
                             Text(user.name)
-                                .foregroundColor(.black)
                             Spacer()
                             if let image = user.image {
                                 Image(uiImage: image)
                                     .resizable()
+                                    .scaledToFit()
                                     .frame(width: 40, height: 40)
                                     .cornerRadius(8)
                             }

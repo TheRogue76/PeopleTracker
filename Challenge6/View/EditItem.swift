@@ -24,6 +24,7 @@ struct EditItem: View {
                 if let image = viewModel.user.image {
                     Image(uiImage: image)
                         .resizable()
+                        .scaledToFit()
                         .frame(height: 300)
                         .cornerRadius(12)
                 }
