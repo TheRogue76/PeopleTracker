@@ -8,14 +8,46 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = ViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack(path: $viewModel.path) {
+            List {
+                ForEach(viewModel.users) { user in
+                    Button{
+                        viewModel.showDetailScreen(user: user)
+                    } label: {
+                        HStack {
+                            Text(user.name)
+                                .foregroundColor(.black)
+                            Spacer()
+                            if let image = user.image {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                            }
+                        }
+                    }
+                }
+            }
+            .toolbar(content: {
+                Button {
+                    viewModel.isShowingPicker = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+            })
+            .navigationTitle("People tracker")
+            .sheet(isPresented: $viewModel.isShowingPicker) {
+                ImagePicker(image: $viewModel.inputImage)
+            }
+            .navigationDestination(for: User.self, destination: { user in
+                EditItem(user: user) { user in
+                    viewModel.updateOrAddUser(user: user)
+                }
+            })
         }
-        .padding()
+        
     }
 }
 

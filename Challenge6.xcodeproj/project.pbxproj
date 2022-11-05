@@ -11,6 +11,13 @@
 		CEFA6E4029153A930032876F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA6E3F29153A930032876F /* ContentView.swift */; };
 		CEFA6E4229153A960032876F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFA6E4129153A960032876F /* Assets.xcassets */; };
 		CEFA6E4529153A960032876F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFA6E4429153A960032876F /* Preview Assets.xcassets */; };
+		CEFA6E4D29153AFD0032876F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA6E4C29153AFD0032876F /* ImagePicker.swift */; };
+		CEFA6E502915D1880032876F /* ContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA6E4F2915D1880032876F /* ContentView+ViewModel.swift */; };
+		CEFA6E532915D35C0032876F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA6E522915D35C0032876F /* User.swift */; };
+		CEFA6E552915D44F0032876F /* Filemanager+DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA6E542915D44F0032876F /* Filemanager+DocumentsDirectory.swift */; };
+		CEFA6E572915D5770032876F /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA6E562915D5770032876F /* ImageService.swift */; };
+		CEFA6E592915DB480032876F /* EditItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA6E582915DB480032876F /* EditItem.swift */; };
+		CEFA6E5B2915E40E0032876F /* EditItem+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA6E5A2915E40E0032876F /* EditItem+ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		CEFA6E3F29153A930032876F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CEFA6E4129153A960032876F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEFA6E4429153A960032876F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEFA6E4C29153AFD0032876F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		CEFA6E4F2915D1880032876F /* ContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+ViewModel.swift"; sourceTree = "<group>"; };
+		CEFA6E522915D35C0032876F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CEFA6E542915D44F0032876F /* Filemanager+DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filemanager+DocumentsDirectory.swift"; sourceTree = "<group>"; };
+		CEFA6E562915D5770032876F /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		CEFA6E582915DB480032876F /* EditItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItem.swift; sourceTree = "<group>"; };
+		CEFA6E5A2915E40E0032876F /* EditItem+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditItem+ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +65,15 @@
 		CEFA6E3C29153A930032876F /* Challenge6 */ = {
 			isa = PBXGroup;
 			children = (
+				CEFA6E512915D34B0032876F /* Model */,
+				CEFA6E4E2915D1710032876F /* ViewModel */,
+				CEFA6E4B29153AEA0032876F /* View */,
 				CEFA6E3D29153A930032876F /* Challenge6App.swift */,
 				CEFA6E3F29153A930032876F /* ContentView.swift */,
 				CEFA6E4129153A960032876F /* Assets.xcassets */,
 				CEFA6E4329153A960032876F /* Preview Content */,
+				CEFA6E542915D44F0032876F /* Filemanager+DocumentsDirectory.swift */,
+				CEFA6E562915D5770032876F /* ImageService.swift */,
 			);
 			path = Challenge6;
 			sourceTree = "<group>";
@@ -65,6 +84,32 @@
 				CEFA6E4429153A960032876F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CEFA6E4B29153AEA0032876F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA6E4C29153AFD0032876F /* ImagePicker.swift */,
+				CEFA6E582915DB480032876F /* EditItem.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEFA6E4E2915D1710032876F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA6E4F2915D1880032876F /* ContentView+ViewModel.swift */,
+				CEFA6E5A2915E40E0032876F /* EditItem+ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CEFA6E512915D34B0032876F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA6E522915D35C0032876F /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +182,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFA6E4D29153AFD0032876F /* ImagePicker.swift in Sources */,
 				CEFA6E4029153A930032876F /* ContentView.swift in Sources */,
 				CEFA6E3E29153A930032876F /* Challenge6App.swift in Sources */,
+				CEFA6E5B2915E40E0032876F /* EditItem+ViewModel.swift in Sources */,
+				CEFA6E572915D5770032876F /* ImageService.swift in Sources */,
+				CEFA6E532915D35C0032876F /* User.swift in Sources */,
+				CEFA6E552915D44F0032876F /* Filemanager+DocumentsDirectory.swift in Sources */,
+				CEFA6E592915DB480032876F /* EditItem.swift in Sources */,
+				CEFA6E502915D1880032876F /* ContentView+ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
