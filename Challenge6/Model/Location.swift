@@ -34,3 +34,7 @@ struct Location: Identifiable, Codable, Equatable, Hashable {
         self.longitude = location.longitude
     }
 }
+
+struct Test: Identifiable {
+    
+}
